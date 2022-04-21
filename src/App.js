@@ -4,11 +4,40 @@ import Header from './components/Header/Header';
 import Projects from './components/projects/Projects';
 import Contact from './components/Contact';
 
+
+import todo from "./asset/2022-04-20 (6).jpg";
+import store from "./asset/2022-04-20 (4).jpg";
+import exchange from "./asset/2022-04-20 (2).jpg";
+
+
 function App() {
+
+  const data = [
+    {
+      id:1,
+      image: store,
+      name: "Msud Store",
+      href: "https://msud-store.netlify.app/",
+    },
+    {
+      id:2,
+      image: exchange,
+      name: "Msud Exchange",
+      href: "https://msud-exchange.netlify.app/",
+    },
+    {
+      id:3,
+      image: todo,
+      name: "Todo App",
+      href: "https://msud-todo.netlify.app/",
+    },
+  ];
+
+
   return (
-    <div className="scroll-smooth transition-all ease-out">
+    <div className="scroll-smooth transition-all ease-out dark:bg-gray-800">
       <Header />
-      <Projects />
+      <Projects data={data}/>
       <Contact />
     </div>
   );
