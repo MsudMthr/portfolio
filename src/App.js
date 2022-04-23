@@ -1,18 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+//components
+import HomePage from "./components/HomePage";
+import Navbar from "./components/Header/Navbar";
 
-import Header from "./components/Header/Header";
-import Projects from "./components/projects/Projects";
-import Contact from "./components/Contact";
-import Player from "./components/musicPlayer/Player";
-
+//images
 import todo from "./asset/2022-04-20 (6).jpg";
 import store from "./asset/2022-04-20 (4).jpg";
 import exchange from "./asset/2022-04-20 (2).jpg";
 import messenger from "./asset/messenger.jpg";
 
-import { songs } from "../src/songs";
-
 function App() {
+  const [showTopButton, setShowTopButton] = useState(false);
+  const [navbarBackground, setNavbarBackground] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 20) {
+        setNavbarBackground(true);
+      } else {
+        setNavbarBackground(false);
+      }
+      if (window.scrollY > 100) {
+        setShowTopButton(true);
+      } else {
+        setShowTopButton(false);
+      }
+    });
+  }, []);
+
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   const data = [
     {
       id: 1,
@@ -42,10 +64,20 @@ function App() {
 
   return (
     <div className="scroll-smooth transition-all ease-out dark:bg-gray-800">
-      <Header />
-      <Projects data={data} />
-      <Contact />
-      <Player songs={songs}/>
+      <Navbar navbarBackground={navbarBackground} />
+
+      <Routes>
+        <Route path="/*" element={<HomePage data={data} />} />
+        <Route path="/games" element={<h1></h1>} />
+      </Routes>
+      {showTopButton && (
+        <button
+          onClick={goToTop}
+          className="fixed bottom-4 right-4 bg-green-300 text-3xl backdrop-blur-lg bg-opacity-20 py-5 px-4 rounded-full z-40"
+        >
+          <p className="animate-bounce">top</p>
+        </button>
+      )}
     </div>
   );
 }
