@@ -1,6 +1,7 @@
 import React from "react";
 //swiper
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
 import { Pagination } from "swiper";
 //swiper style
 import "swiper/css";
@@ -16,6 +17,7 @@ const Projects = ({data}) => {
   return (
     <div id="projects" className=" dark:bg-gray-800">
       <Swiper
+      
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
@@ -27,7 +29,7 @@ const Projects = ({data}) => {
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination]}
+        modules={[Pagination ,Autoplay ]}
         className="mySwiper h-screen  my-4 max-w-5xl"
       >
         {data.map((project) => (

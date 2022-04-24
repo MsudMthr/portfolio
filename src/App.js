@@ -3,22 +3,24 @@ import { Route, Routes } from "react-router-dom";
 //components
 import HomePage from "./components/HomePage";
 import Navbar from "./components/Header/Navbar";
+import Games from "./components/games/Games";
 
 //images
 import todo from "./asset/2022-04-20 (6).jpg";
 import store from "./asset/2022-04-20 (4).jpg";
 import exchange from "./asset/2022-04-20 (2).jpg";
 import messenger from "./asset/messenger.jpg";
+import RockScissorsPaper from "./components/games/RockScissorsPaper";
 
 function App() {
   const [showTopButton, setShowTopButton] = useState(false);
-  const [navbarBackground, setNavbarBackground] = useState(false);
+  const [navbarShow, setnavbarShow] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 20) {
-        setNavbarBackground(true);
+        setnavbarShow(true);
       } else {
-        setNavbarBackground(false);
+        setnavbarShow(false);
       }
       if (window.scrollY > 100) {
         setShowTopButton(true);
@@ -64,11 +66,12 @@ function App() {
 
   return (
     <div className="scroll-smooth transition-all ease-out dark:bg-gray-800">
-      <Navbar navbarBackground={navbarBackground} />
+      <Navbar navbarShow={navbarShow} />
 
       <Routes>
-        <Route path="/*" element={<HomePage data={data} />} />
-        <Route path="/games" element={<h1></h1>} />
+        <Route path="/*" element={<HomePage data={data} navbarShow={navbarShow}/>} />
+        <Route path="/games" element={<Games />} />
+        <Route path="/games/RockScissorsPaper" element={<RockScissorsPaper />}/>
       </Routes>
       {showTopButton && (
         <button

@@ -1,27 +1,22 @@
 import React, { useEffect, useState } from "react";
 import Theme from "../theme";
+import { Link } from "react-router-dom";
 
-const Navbar = ({ navbarBackground }) => {
+const Navbar = ({ navbarShow }) => {
   return (
     <div
       className={`flex justify-between items-center py-4 px-10 z-50 fixed w-full top-0 transition-ease ${
-        navbarBackground &&
+        navbarShow &&
         "bg-slate-100/5 bg-opacity-50  backdrop-blur-2xl shadow-lg"
       }`}
     >
       <div className="flex gap-4">
-        <a
-          href="#projects"
-          className="text-gray-500 font-medium hover:text-gray-900"
-        >
-          Projects
-        </a>
-        <a
-          href="#contact"
-          className="text-gray-500 font-medium hover:text-gray-900"
-        >
-          contact
-        </a>
+        <Link to={'/'} className="menu-link">
+          Home
+        </Link>
+        <Link to={"/games"} className="menu-link">
+          Games
+        </Link>
       </div>
       <div>
         <Theme />
