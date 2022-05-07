@@ -23,7 +23,7 @@ const Works = () => {
       <div className="sm:h-4/6 absolute justify-end flex-wrap  gap-3 bottom-24  sm:top-20 sm:right-10  center sm:w-fit  w-screen  sm:flex-col">
         {data.map((item) => (
           <Link
-            to={`/Project/${item.name}`}
+            to={`/Project/${item.id}`}
             className="center flex-col relative game-card transition-ease"
             key={item.id}
           >

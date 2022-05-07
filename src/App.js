@@ -18,24 +18,39 @@ export const data = [
     image: store,
     name: "Msud Store",
     href: "https://msud-store.netlify.app/",
+    technology: ["react", "tailwind", "axios", "SPA", "PWA"],
+    capabilities: [
+      "Shoping Cart",
+      "Search Products",
+      "Validation Form",
+      "Favorite Product",
+      "Dark theme",
+    ],
   },
   {
     id: 2,
     image: exchange,
     name: "Msud Exchange",
     href: "https://msud-exchange.netlify.app/",
+    technology: ["react", "tailwind", "axios", "SPA"],
+    capabilities: ["Search Coins", "Detail Coin", "Charts", "Dark theme"],
   },
   {
     id: 3,
     image: todo,
     name: "Todo App",
     href: "https://msud-todo.netlify.app/",
+    technology: ["react", "SASS", "axios"],
+    capabilities: ["counting actions", "add actions"],
   },
   {
     id: 4,
     image: messenger,
     name: "Msudgram(messenger)",
     href: "https://msudgram-messenger.netlify.app",
+    technology: ["react", "FireBase", "ChatEngine", "axios"],
+    capabilities: ["authentication", "Privet Chat", "group chat"],
+
   },
 ];
 
@@ -74,7 +89,7 @@ function App() {
           element={<HomePage data={data} navbarShow={navbarShow} />}
         />
         <Route path="/Project" element={<Works />} />
-        <Route path="/Project/:id" element={<DeatailWorks />}/>
+        <Route path="/Project/:id" element={<DeatailWorks />} />
       </Routes>
       {showTopButton && (
         <button
