@@ -28,7 +28,7 @@ const Contact = () => {
         </a>
 
 
-        <a target={"_blank"} rel="noreferrer" href="skype:Masoud Motahari" className="contact">
+        <a target={"_blank"} rel="noreferrer" href="Skype:Masoud Motahari?call" className="contact">
           <img src={skype} alt="skype" className="h-10 rounded-lg" />
           <span className="font-bold text-sky-400">skype</span>
         </a>

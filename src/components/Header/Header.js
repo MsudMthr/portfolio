@@ -7,7 +7,7 @@ const Header = () => {
         <h1 className="font-bold text-4xl md:text-6xl text-amber-100">
           Hey, I'm Masoud ;{`)`}
         </h1>
-        <h6 className="font-semibold text-xl md:text-3xl text-red-100 italic ">
+        <h6 className="font-semibold text-xl md:text-3xl text-red-100 italic capitalize ">
           I'm a Front End Developer living in Mashhad
         </h6>
         <a href="#contact" className="button transition-ease ">

@@ -14,8 +14,8 @@ const Navbar = ({ navbarShow }) => {
         <Link to={'/'} className="menu-link">
           Home
         </Link>
-        <Link to={"/games"} className="menu-link">
-          Games
+        <Link to={"/Project"} className="menu-link">
+          Project
         </Link>
       </div>
       <div>
