@@ -56,13 +56,16 @@ export const data = [
 
 function App() {
   const [showTopButton, setShowTopButton] = useState(false);
-  const [navbarShow, setnavbarShow] = useState(false);
+  const [navbarShow, setNavbarShow] = useState(false);
+  const [direction , setDirection] = useState("ltr")
+  console.log(direction);
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 20) {
-        setnavbarShow(true);
+        setNavbarShow(true);
       } else {
-        setnavbarShow(false);
+        setNavbarShow(false);
       }
       if (window.scrollY > 100) {
         setShowTopButton(true);
@@ -80,8 +83,8 @@ function App() {
   };
 
   return (
-    <div className="scroll-smooth transition-all ease-out dark:bg-gray-800">
-      <Navbar navbarShow={navbarShow} />
+    <div className="scroll-smooth transition-all ease-out font-vazir dark:bg-gray-800">
+      <Navbar navbarShow={navbarShow} direction={setDirection} />
 
       <Routes>
         <Route

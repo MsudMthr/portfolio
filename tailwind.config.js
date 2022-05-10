@@ -6,6 +6,9 @@ module.exports = {
       background: {
         Banner: "url",
       },
+      fontFamily: {
+        vazir: ["Vazirmatn"],
+      },
     },
   },
   plugins: [],

@@ -26,7 +26,7 @@ const DeatailWorks = () => {
             ))}
           </ul>
         </div>
-        <a href={project.href} rel="noreferrer" target="_blank" className="font-bold text-2xl dark:text-emerald-200" >Visit Site</a>
+        <a href={project.href} rel="noreferrer" target="_blank" className="font-bold text-2xl text-teal-800 underline dark:text-emerald-200" >Visit Site</a>
       </div>
     </div>
   );

@@ -1,0 +1,19 @@
+{
+    "name" : {
+        "1" : "Hey, I'm Masoud ;)"
+    },
+    "details" : {
+        "1" : "I'm A Front End Developer Living In Mashhad"
+    },
+    "contact" : "CONTACT ME",
+    "menu" : {
+        "1" : "Home",
+        "2" : "Project"
+    },
+    "projects" : {
+        "1" : "Msud Store",
+        "2" : "Msud Exchange",
+        "3" : "Todo App",
+        "4" : "MsudGram(Messenger)"
+    }
+}
