@@ -14,6 +14,7 @@ const Header = () => {
         <h6 className="font-semibold text-xl md:text-3xl text-red-100 italic capitalize ">
           {t("details.1")}
         </h6>
+        <p className="text-violet-400 sm:w-96 w-[300px] font-medium  drop-shadow-lg ">{t("details.2")}</p>
         <a href="#contact" className="button transition-ease ">
           {t("contact")}
         </a>

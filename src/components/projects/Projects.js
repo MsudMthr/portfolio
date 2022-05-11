@@ -7,17 +7,17 @@ import { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
+import { useTranslation } from "react-i18next";
 
 //components
 import Project from "./Project";
 
-const Projects = ({data}) => {
-  
+const Projects = ({ data }) => {
+  const { t, i18n } = useTranslation();
 
   return (
     <div id="projects" className=" dark:bg-gray-800">
       <Swiper
-      
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
@@ -29,7 +29,7 @@ const Projects = ({data}) => {
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination ,Autoplay ]}
+        modules={[Pagination, Autoplay]}
         className="mySwiper h-screen  my-4 max-w-5xl"
       >
         {data.map((project) => (

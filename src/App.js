@@ -6,9 +6,9 @@ import Navbar from "./components/Header/Navbar";
 import Works from "./components/Works/Works";
 
 //images
-import todo from "./asset/2022-04-20 (6).jpg";
-import store from "./asset/2022-04-20 (4).jpg";
-import exchange from "./asset/2022-04-20 (2).jpg";
+import todo from "./asset/todo.jpg";
+import store from "./asset/store.jpg";
+import exchange from "./asset/exchange.jpg";
 import messenger from "./asset/messenger.jpg";
 import DeatailWorks from "./components/Works/DeatailWorks";
 
@@ -50,14 +50,13 @@ export const data = [
     href: "https://msudgram-messenger.netlify.app",
     technology: ["react", "FireBase", "ChatEngine", "axios"],
     capabilities: ["authentication", "Privet Chat", "group chat"],
-
   },
 ];
 
 function App() {
   const [showTopButton, setShowTopButton] = useState(false);
   const [navbarShow, setNavbarShow] = useState(false);
-  const [direction , setDirection] = useState("ltr")
+  const [direction, setDirection] = useState("ltr");
   console.log(direction);
 
   useEffect(() => {
@@ -85,7 +84,6 @@ function App() {
   return (
     <div className="scroll-smooth transition-all ease-out font-vazir dark:bg-gray-800">
       <Navbar navbarShow={navbarShow} direction={setDirection} />
-
       <Routes>
         <Route
           path="/*"
@@ -97,9 +95,24 @@ function App() {
       {showTopButton && (
         <button
           onClick={goToTop}
-          className="fixed bottom-4 right-4 bg-green-300 text-3xl backdrop-blur-lg bg-opacity-20 py-5 px-4 rounded-full z-40"
+          className="fixed bottom-4 right-4 bg-green-300 text-3xl backdrop-blur-lg bg-opacity-20 py-4 px-3 rounded-full z-40"
         >
-          <p className="animate-bounce">top</p>
+          <p className="animate-pulse">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M5 10l7-7m0 0l7 7m-7-7v18"
+              />
+            </svg>
+          </p>
         </button>
       )}
     </div>

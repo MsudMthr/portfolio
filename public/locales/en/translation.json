@@ -2,18 +2,15 @@
     "name" : {
         "1" : "Hey, I'm Masoud ;)"
     },
+    "language":"English",
     "details" : {
-        "1" : "I'm A Front End Developer Living In Mashhad"
+        "1" : "I'm A Front End Developer Living In Mashhad",
+        "2" : "If you need someone who can implement the front part of the site and also has a team spirit, creativity and responsibility, contact me"
     },
     "contact" : "CONTACT ME",
     "menu" : {
         "1" : "Home",
         "2" : "Project"
-    },
-    "projects" : {
-        "1" : "Msud Store",
-        "2" : "Msud Exchange",
-        "3" : "Todo App",
-        "4" : "MsudGram(Messenger)"
     }
+    
 }
