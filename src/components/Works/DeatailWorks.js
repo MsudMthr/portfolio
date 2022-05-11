@@ -1,4 +1,6 @@
 import React from "react";
+import useTitle from "../../hooks/useTitle"
+
 
 import { useParams, UseNavigate } from "react-router-dom";
 import { data } from "../../App";
@@ -6,7 +8,8 @@ import { data } from "../../App";
 const DeatailWorks = () => {
   const { id } = useParams();
   const project = data[id - 1];
-
+  useTitle(`Portfolio/Projects/${project.name}`)
+  
   return (
     <div className="pt-32 h-screen ">
       <div className="flex  flex-col items-center gap-6">

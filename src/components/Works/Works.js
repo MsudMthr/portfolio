@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
+import useTitle from "../../hooks/useTitle"
+
 //media
 import video from "../../asset/video/animated_medium20211213-29340-b52jd8.mp4";
 
@@ -7,6 +9,7 @@ import { data } from "../../App";
 import Work from "./Work";
 
 const Works = () => {
+  useTitle("Portfolio/Projects")
   console.log(data);
   return (
     <div className=" h-screen w-full bg-[#ddd4cd]">

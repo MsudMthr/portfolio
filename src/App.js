@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+import useTitle from "./hooks/useTitle"
 //components
 import HomePage from "./components/HomePage";
 import Navbar from "./components/Header/Navbar";
@@ -54,6 +55,7 @@ export const data = [
 ];
 
 function App() {
+  useTitle("Portfolio")
   const [showTopButton, setShowTopButton] = useState(false);
   const [navbarShow, setNavbarShow] = useState(false);
   const [direction, setDirection] = useState("ltr");
