@@ -10,6 +10,16 @@ function classNames(...classes) {
 const LanguageMenu = () => {
   const [language, setLanguage] = useState("English");
   const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    if(localStorage.getItem("i18nextLng") === "fa") {
+      document.dir = "rtl"
+    } else {
+      document.dir = "ltr"
+    }
+  })
+
+
   const clickHandler = (event, language) => {
     i18n.changeLanguage(event);
     setLanguage(language);
