@@ -3,6 +3,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      animation: {
+        'spin-fast': 'spin .5s linear infinite ',
+      },
       background: {
         Banner: "url",
       },
