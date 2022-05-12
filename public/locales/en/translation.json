@@ -10,7 +10,8 @@
     "contact" : "CONTACT ME",
     "menu" : {
         "1" : "Home",
-        "2" : "Project"
+        "2" : "Project",
+        "3" : "About Me"
     }
     
 }

@@ -12,6 +12,7 @@ import store from "./asset/store.jpg";
 import exchange from "./asset/exchange.jpg";
 import messenger from "./asset/messenger.jpg";
 import DeatailWorks from "./components/Works/DeatailWorks";
+import AboutMe from "./components/AboutMe/AboutMe";
 
 export const data = [
   {
@@ -93,6 +94,7 @@ function App() {
         />
         <Route path="/Project" element={<Works />} />
         <Route path="/Project/:id" element={<DeatailWorks />} />
+        <Route path="/AboutMe" element={<AboutMe />}/>
       </Routes>
       {showTopButton && (
         <button

@@ -21,6 +21,9 @@ const Navbar = ({ navbarShow, setDirection }) => {
         <Link to={"/Project"} className="menu-link">
           {t("menu.2")}
         </Link>
+        <Link to={"/AboutMe"} className="menu-link">
+          {t("menu.3")}
+        </Link>
       </div>
       <div>
         <div className="flex ">
