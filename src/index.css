@@ -32,6 +32,15 @@ html {
 
 }
 
+.burgerLine {
+  @apply w-full h-0.5 bg-black origin-[1px] dark:bg-white;
+  transition: 1s all;
+}
+
+.menu {
+  transition: 1s all;
+}
+
 .banner::before{
   
     position: absolute;

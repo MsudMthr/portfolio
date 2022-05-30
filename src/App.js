@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import useTitle from "./hooks/useTitle"
+import useTitle from "./hooks/useTitle";
 //components
 import HomePage from "./components/HomePage";
 import Navbar from "./components/Header/Navbar";
@@ -11,7 +11,7 @@ import todo from "./asset/todo.jpg";
 import store from "./asset/store.jpg";
 import exchange from "./asset/exchange.jpg";
 import messenger from "./asset/messenger.jpg";
-import DeatailWorks from "./components/Works/DeatailWorks";
+import DetailWorks from "./components/Works/DeatailWorks";
 import AboutMe from "./components/AboutMe/AboutMe";
 
 export const data = [
@@ -20,7 +20,7 @@ export const data = [
     image: store,
     name: "Msud Store",
     href: "https://msud-store.netlify.app/",
-    technology: ["react", "tailwind", "axios", "SPA", "PWA"],
+    technology: ["react", "redux", "tailwind", "axios", "SPA", "PWA"],
     capabilities: [
       "Shoping Cart",
       "Search Products",
@@ -34,7 +34,7 @@ export const data = [
     image: exchange,
     name: "Msud Exchange",
     href: "https://msud-exchange.netlify.app/",
-    technology: ["react", "tailwind", "axios", "SPA"],
+    technology: ["react", "tailwind", "axios", "context" ,"SPA"],
     capabilities: ["Search Coins", "Detail Coin", "Charts", "Dark theme"],
   },
   {
@@ -42,7 +42,7 @@ export const data = [
     image: todo,
     name: "Todo App",
     href: "https://msud-todo.netlify.app/",
-    technology: ["react", "SASS", "axios"],
+    technology: ["react", "SASS", "context","axios"],
     capabilities: ["counting actions", "add actions"],
   },
   {
@@ -56,7 +56,7 @@ export const data = [
 ];
 
 function App() {
-  useTitle("Portfolio")
+  useTitle("Portfolio");
   const [showTopButton, setShowTopButton] = useState(false);
   const [navbarShow, setNavbarShow] = useState(false);
   const [direction, setDirection] = useState("ltr");
@@ -93,8 +93,8 @@ function App() {
           element={<HomePage data={data} navbarShow={navbarShow} />}
         />
         <Route path="/Project" element={<Works />} />
-        <Route path="/Project/:id" element={<DeatailWorks />} />
-        <Route path="/AboutMe" element={<AboutMe />}/>
+        <Route path="/Project/:id" element={<DetailWorks />} />
+        <Route path="/AboutMe" element={<AboutMe />} />
       </Routes>
       {showTopButton && (
         <button

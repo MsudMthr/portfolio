@@ -5,7 +5,7 @@ import useTitle from "../../hooks/useTitle"
 import { useParams, UseNavigate } from "react-router-dom";
 import { data } from "../../App";
 
-const DeatailWorks = () => {
+const DetailWorks = () => {
   const { id } = useParams();
   const project = data[id - 1];
   useTitle(`Portfolio/Projects/${project.name}`)
@@ -35,4 +35,4 @@ const DeatailWorks = () => {
   );
 };
 
-export default DeatailWorks;
+export default DetailWorks;
