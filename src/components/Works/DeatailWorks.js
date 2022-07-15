@@ -1,35 +1,55 @@
-import React from "react";
-import useTitle from "../../hooks/useTitle"
-
+import React, { useRef } from "react";
+import useTitle from "../../hooks/useTitle";
+import { useTranslation } from "react-i18next";
 
 import { useParams, UseNavigate } from "react-router-dom";
-import { data } from "../../App";
+import { data } from "../../projectData";
 
 const DetailWorks = () => {
   const { id } = useParams();
   const project = data[id - 1];
-  useTitle(`Portfolio/Projects/${project.name}`)
-  
+  const { t, i18n } = useTranslation();
+  const projectRef = useRef();
+
+  const fullScreenImageHandler = () => {
+    projectRef.current.requestFullscreen();
+  };
+
+  useTitle(`Portfolio/Projects/${project.name}`);
+
   return (
-    <div className="pt-32 h-screen ">
+    <div className="h-screen pt-32 ">
       <div className="flex  flex-col items-center gap-6">
         <h1 className="font-bold capitalize dark:text-white">{project.name}</h1>
-        <div className="flex justify-around w-full items-center">
+        <div className="flex w-full items-center justify-around">
           <ul className=" text-center capitalize dark:text-white ">
-            <h5 className="font-bold">Capabilities</h5>
+            <h5 className="font-bold">{t("ProjectDetail.2")}</h5>
             {project.capabilities.map((ability) => (
               <li className="my-2">{ability}</li>
             ))}
           </ul>
-          <img src={project.image} alt={project.name} className="w-4/12 md:w-6/12 border-2 rounded shadow-md" />
+          <img
+            src={project.image}
+            alt={project.name}
+            ref={projectRef}
+            onClick={fullScreenImageHandler}
+            className="w-4/12 rounded border-2 shadow-md md:w-6/12"
+          />
           <ul className=" text-center capitalize dark:text-white ">
-            <h5 className="font-bold">Technology</h5>
+            <h5 className="font-bold">{t("ProjectDetail.1")}</h5>
             {project.technology.map((technology) => (
               <li className="my-2">{technology}</li>
             ))}
           </ul>
         </div>
-        <a href={project.href} rel="noreferrer" target="_blank" className="font-bold text-2xl text-teal-800 underline dark:text-emerald-200" >Visit Site</a>
+        <a
+          href={project.href}
+          rel="noreferrer"
+          target="_blank"
+          className="text-2xl font-bold text-teal-800 underline dark:text-emerald-200"
+        >
+          Visit Site
+        </a>
       </div>
     </div>
   );

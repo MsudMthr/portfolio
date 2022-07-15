@@ -5,63 +5,16 @@ import useTitle from "./hooks/useTitle";
 import HomePage from "./components/HomePage";
 import Navbar from "./components/Header/Navbar";
 import Works from "./components/Works/Works";
-
-//images
-import todo from "./asset/todo.jpg";
-import store from "./asset/store.jpg";
-import exchange from "./asset/exchange.jpg";
-import messenger from "./asset/messenger.jpg";
-import DetailWorks from "./components/Works/DeatailWorks";
 import AboutMe from "./components/AboutMe/AboutMe";
-
-export const data = [
-  {
-    id: 1,
-    image: store,
-    name: "Msud Store",
-    href: "https://msud-store.netlify.app/",
-    technology: ["react", "redux", "tailwind", "axios", "SPA", "PWA"],
-    capabilities: [
-      "Shoping Cart",
-      "Search Products",
-      "Validation Form",
-      "Favorite Product",
-      "Dark theme",
-    ],
-  },
-  {
-    id: 2,
-    image: exchange,
-    name: "Msud Exchange",
-    href: "https://msud-exchange.netlify.app/",
-    technology: ["react", "tailwind", "axios", "context" ,"SPA"],
-    capabilities: ["Search Coins", "Detail Coin", "Charts", "Dark theme"],
-  },
-  {
-    id: 3,
-    image: todo,
-    name: "Todo App",
-    href: "https://msud-todo.netlify.app/",
-    technology: ["react", "SASS", "context","axios"],
-    capabilities: ["counting actions", "add actions"],
-  },
-  {
-    id: 4,
-    image: messenger,
-    name: "Msudgram(messenger)",
-    href: "https://msudgram-messenger.netlify.app",
-    technology: ["react", "FireBase", "ChatEngine", "axios"],
-    capabilities: ["authentication", "Privet Chat", "group chat"],
-  },
-];
+import DetailWorks from "./components/Works/DeatailWorks";
+//project details 
+import { data } from "./projectData";
 
 function App() {
   useTitle("Portfolio");
   const [showTopButton, setShowTopButton] = useState(false);
   const [navbarShow, setNavbarShow] = useState(false);
   const [direction, setDirection] = useState("ltr");
-  console.log(direction);
-
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 20) {
@@ -85,7 +38,7 @@ function App() {
   };
 
   return (
-    <div className="scroll-smooth transition-all ease-out font-vazir dark:bg-gray-800">
+    <div className="scroll-smooth font-vazir transition-all ease-out dark:bg-gray-800">
       <Navbar navbarShow={navbarShow} direction={setDirection} />
       <Routes>
         <Route
@@ -99,7 +52,7 @@ function App() {
       {showTopButton && (
         <button
           onClick={goToTop}
-          className="fixed bottom-4 right-4 bg-green-300 text-3xl backdrop-blur-lg bg-opacity-20 py-4 px-3 rounded-full z-40"
+          className="fixed bottom-4 right-4 z-40 rounded-full bg-green-300 bg-opacity-20 py-4 px-3 text-3xl backdrop-blur-lg"
         >
           <p className="animate-pulse">
             <svg

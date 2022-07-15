@@ -5,7 +5,7 @@ import useTitle from "../../hooks/useTitle"
 //media
 import video from "../../asset/video/animated_medium20211213-29340-b52jd8.mp4";
 
-import { data } from "../../App";
+import { data } from "../../projectData";
 import Work from "./Work";
 
 const Works = () => {
