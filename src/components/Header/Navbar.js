@@ -16,8 +16,8 @@ const Navbar = ({ navbarShow }) => {
       }`}
     >
       <div
-        className={`flex gap-4 menu absolute sm:relative sm:translate-x-0 sm:scale-100 ${
-          isOpen ? "translate-x-8 " : "-translate-x-[200%] scale-0 "
+        className={`flex flex-col sm:flex-row z-30 gap-4 menu absolute sm:relative sm:translate-x-0 sm:scale-100  ${
+          isOpen ? "translate-x-8 translate-y-8 " : "-translate-x-[200%] scale-0 "
         }`}
       >
         <Link to={"/"} className="menu-link">
@@ -41,7 +41,8 @@ const Navbar = ({ navbarShow }) => {
       <button
         onClick={() => setIsOpen(false)}
         className={` z-0 sm:hidden ${
-          isOpen && "absolute top-0 left-0 h-screen w-screen bg-black opacity-25"
+          isOpen &&
+          "absolute top-0 left-0 z-0 h-screen w-screen bg-black opacity-75"
         }`}
       ></button>
       <div>

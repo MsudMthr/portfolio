@@ -33,12 +33,12 @@ html {
 }
 
 .burgerLine {
-  @apply w-full h-0.5 bg-black origin-[1px] dark:bg-white;
+  @apply w-full h-0.5  origin-[1px] bg-gray-500;
   transition: 1s all;
 }
 
 .menu {
-  transition: 1s all;
+  transition: .5s all;
 }
 
 .banner::before{
